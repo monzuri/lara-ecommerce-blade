@@ -1,0 +1,22 @@
+User-agent: *
+Disallow:
+To convert all files with the .html extension to .blade.php in Visual Studio Code (VSCode), you can use an integrated terminal along with the commands I mentioned earlier. Here’s a step-by-step guide on how to do this in VSCode:
+Using the Integrated Terminal
+
+    Open VSCode and navigate to the project directory.
+
+    Open the Integrated Terminal:
+        You can open the terminal by selecting View > Terminal from the menu or by pressing Ctrl+`.
+
+    Run the Command:
+        If you're on Linux or macOS, use the following command:
+
+        sh
+
+find . -type f -name "*.html" -exec bash -c 'mv "$0" "${0%.html}.blade.php"' {} \; git bash working
+
+If you're on Windows (using PowerShell), use this command:
+
+powershell
+
+Get-ChildItem -Recurse -Filter *.html | Rename-Item -NewName { $_.Name -replace '\.html$','.bla
